@@ -100,8 +100,9 @@ function ResultCard({ result, visible }) {
 
   if (!result) return null;
 
-  const isJiying = result.judgment?.includes('兼营');
-  const isUncertain = result.judgment?.includes('存疑') || result.hint;
+  const isJiying = result.judgment?.startsWith('兼营') || (result.judgment?.includes('兼营') && !result.judgment?.includes('混合销售'));
+  const isMixed = result.judgment?.startsWith('混合销售') || result.conclusion?.includes('不能拆') || result.conclusion?.includes('不可拆');
+  const isUncertain = result.judgment?.startsWith('存疑') || (!isJiying && !isMixed);
   const verdictColor = isUncertain ? '#d46b08' : isJiying ? '#389e0d' : '#cf1322';
   const verdictBg = isUncertain ? '#fffbe6' : isJiying ? '#f6ffed' : '#fff1f0';
   const verdictLabel = isUncertain ? '⚠ 存疑' : isJiying ? '✓ 兼营·可拆分' : '✗ 混合销售·不可拆';
