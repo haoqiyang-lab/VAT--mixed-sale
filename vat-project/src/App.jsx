@@ -133,7 +133,7 @@ function ResultCard({ result, visible }) {
         }}>
           <strong>判定：</strong>{result.judgment}
         </div>
-        {result.hint && (
+        {result.hint && result.hint !== 'null' && (
           <div style={{
             marginTop: 10, padding: '10px 12px', borderRadius: 8,
             background: '#fffbe6', border: '1px solid #ffe58f',
@@ -154,13 +154,13 @@ function ResultCard({ result, visible }) {
               <div style={{ fontSize: 11, color: '#389e0d', fontWeight: 600, marginBottom: 4 }}>✓ 正确处理</div>
               <div style={{ fontSize: 13, color: '#333', lineHeight: 1.7 }}>{result.taxCalc.correct}</div>
             </div>
-            {result.taxCalc.wrong && (
+            {result.taxCalc.wrong && result.taxCalc.wrong !== 'null' && (
               <div style={{ padding: '12px 14px', borderRadius: 8, background: '#fff1f0', border: '1px solid #ffa39e' }}>
                 <div style={{ fontSize: 11, color: '#cf1322', fontWeight: 600, marginBottom: 4 }}>✗ 常见错误</div>
                 <div style={{ fontSize: 13, color: '#333', lineHeight: 1.7 }}>{result.taxCalc.wrong}</div>
               </div>
             )}
-            {result.taxCalc.diff && (
+            {result.taxCalc.diff && result.taxCalc.diff !== 'null' && (
               <div style={{
                 padding: '12px 14px', borderRadius: 8,
                 background: 'linear-gradient(135deg, #fff7e6, #fff1f0)',
