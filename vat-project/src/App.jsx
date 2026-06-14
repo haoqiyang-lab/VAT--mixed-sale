@@ -22,7 +22,7 @@ const DEMO_CASES = [
   {
     id: 'D',
     label: '案例D · 设备+技术服务',
-    tag: '主附存疑',
+    tag: '主附关系',
     scenario: '我司与客户签一份合同，销售定制生产设备 450 万元，同时提供配套技术咨询服务 400 万元，两项分别报价但在同一份合同内。高管对税率有分歧，请问按几个税率计税？'
   },
   {
@@ -37,6 +37,7 @@ const TAG_COLORS = {
   '新旧冲突': { bg: '#fff1f0', color: '#cf1322', border: '#ffa39e' },
   '命中列举': { bg: '#e6f7ff', color: '#0958d9', border: '#91caff' },
   '兼营可拆': { bg: '#f6ffed', color: '#389e0d', border: '#b7eb8f' },
+  '主附关系': { bg: '#f9f0ff', color: '#531dab', border: '#d3adf7' },
   '主附存疑': { bg: '#fffbe6', color: '#d46b08', border: '#ffe58f' }
 };
 
